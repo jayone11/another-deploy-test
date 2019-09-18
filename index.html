@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+    </style>
     <title>Another Deploy Test</title>
 </head>
 <body>
@@ -11,5 +34,29 @@
     <p>Technology is pretty cool. Artificial intelligence may take over the world one day. Elon Musk may be to blame if A.I. becomes self aware and tries to end civilization. Or maybe A.I. will put us in the matrix</p>
     <br>
     <p>Technology is pretty cool. Artificial intelligence may take over the world one day. Elon Musk may be to blame if A.I. becomes self aware and tries to end civilization. Or maybe A.I. will put us in the matrix</p>
+
+    <p><button onclick="myMove()">Click Me</button></p> 
+
+    <div id ="container">
+        <div id ="animate">My animation will go here</div>
+    </div>
+
+    <script>
+            function myMove() {
+              var elem = document.getElementById("animate");   
+              var pos = 0;
+              var id = setInterval(frame, 5);
+              function frame() {
+                if (pos == 350) {
+                  clearInterval(id);
+                } else {
+                  pos++; 
+                  elem.style.top = pos + "px"; 
+                  elem.style.left = pos + "px"; 
+                }
+              }
+            }
+    </script>
+
 </body>
 </html>
